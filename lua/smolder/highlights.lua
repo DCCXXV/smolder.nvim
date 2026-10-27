@@ -3,6 +3,7 @@ local M = {}
 function M.get(p, cfg)
   local bg = cfg.transparent and p.none or p.bg
   local float_bg = cfg.transparent and p.none or p.bg_dark
+  local cursorline = cfg.transparent and { underline = true, sp = p.bg4 } or { bg = p.bg1 }
   local kw = { fg = p.orange, bold = cfg.bold_keywords }
   local cmt = { fg = p.comment, italic = cfg.italic_comments }
 
@@ -16,8 +17,8 @@ function M.get(p, cfg)
     lCursor       = { link = "Cursor" },
     CursorIM      = { link = "Cursor" },
     TermCursor    = { link = "Cursor" },
-    CursorLine    = { bg = p.bg1 },
-    CursorColumn  = { bg = p.bg1 },
+    CursorLine    = cursorline,
+    CursorColumn  = { bg = cfg.transparent and p.none or p.bg1 },
     ColorColumn   = { bg = p.bg1 },
     CursorLineNr  = { fg = p.orange, bold = true },
     LineNr        = { fg = p.bg4 },
