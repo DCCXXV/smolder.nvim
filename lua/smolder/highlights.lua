@@ -46,7 +46,7 @@ function M.get(p, cfg)
     WinBarNC      = { fg = p.gray, bg = bg },
     TabLine       = { fg = p.gray, bg = p.bg1 },
     TabLineSel    = { fg = p.fg, bg = p.bg3, bold = true },
-    TabLineFill   = { bg = p.bg_dark },
+    TabLineFill   = { bg = float_bg },
 
     Pmenu         = { fg = p.fg, bg = p.bg2 },
     PmenuSel      = { fg = p.fg_bright, bg = p.bg4 },
